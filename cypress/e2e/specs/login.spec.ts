@@ -1,5 +1,3 @@
-// cypress/e2e/specs/login.spec.ts
-
 import { AuthService } from '../services/AuthService';
 
 describe('Login API Tests', () => {
