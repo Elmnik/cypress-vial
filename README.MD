@@ -1,4 +1,4 @@
-*Cypress Test Implementation*
+    Cypress Test Implementation
 
 Automation of React App Backend and Frontend with Cypress & TypeScript
 
@@ -16,7 +16,7 @@ This project automates a React app that manages queries against clinical trial d
 
 ---
 
-*Objectives*
+    Objectives
 
 - Develop a Comprehensive Testing Plan (xlsx.file)
 
@@ -26,7 +26,7 @@ This project automates a React app that manages queries against clinical trial d
 
 - Execute the FRS Against the App
 
-- Document any issues or discrepancies (delivered in a .doc file).
+- Document any issues or discrepancies (Doc file).
 
 - Perform manual and automated testing to validate functionality.
 
@@ -38,7 +38,7 @@ This project automates a React app that manages queries against clinical trial d
 
 ---
 
-*Key Features Automated*
+    Key Features Automated
 
 Backend (API)
 
@@ -78,128 +78,89 @@ Was implemented automated tests for the React app's query management functionali
 
 - Verify Table Columns
 
-Test Case: Ensures the query table displays the correct columns (Question, Answer, Queries).
+Test Case: Verify the query table displays the correct columns (Question, Answer, Queries).
 
 - Verify Query Status Indicators
 
-Test Case: Validates that the query status indicators (Open and Resolved) are displayed with the correct colors.
+Test Case: Verify that the query status indicators (Open and Resolved) are displayed with the correct colors.
 
 - Create a New Query
 
-Test Case: Verifies that a new query can be created with valid input and that invalid input is handled correctly.
+Test Case: Verify that a new query can be created with valid input and that invalid input is handled correctly.
 
 - View an Open Query
 
-Test Case: Ensures that the details of an open query are displayed correctly in the modal.
+Test Case: Verify that the details of an open query are displayed correctly in the modal.
 
 - View a Resolved Query
 
-Test Case: Validates that the details of a resolved query are displayed correctly in the modal.
+Test Case: Verify that the details of a resolved query are displayed correctly in the modal.
+
+- Attempt to view a Non-Existen Query
+
+Test Case: Verify a query that doesn't exist
 
 - Resolve an Open Query
 
-Test Case: Confirms that an open query can be resolved and its status is updated.
+Test Case: Verify that an open query can be resolved and its status is updated.
+
+- Attempt to Resolve an already Resolved query
+
+Test Case :  Verify that can be resolved an already resolved query
 
 - Delete a Query
 
 Test Case: Verifies that a query can be deleted and is no longer displayed in the table.
 
-- Edge Cases
+- Attempt to Delete a Non-Existent Query
 
-Test Case: Ensures that attempts to view, resolve, or delete non-existent queries are handled gracefully.
+Test Case:  Verify that a query can be deleted even if doesn't exist
 
-How to Test
-Prerequisites
-Node.js (v16 or higher) installed.
+- Verify Query Deletion
 
-Cypress installed globally or locally in the project.
+Test Case: Verify a query deletion
 
-Access to the RESTful API and React app (ensure both are running).
+---
 
-Running Tests Locally
-Clone the Repository
+    How to Test 
 
-bash
-Copy
-git clone <repository-url>
-cd <project-folder>
-Install Dependencies
+*Prerequisites:*
 
-bash
-Copy
-npm install
-Run Cypress Tests
+- Node.js (v16 or higher) installed.
 
-Open Cypress in interactive mode:
+- Cypress installed globally or locally in the project.
 
-bash
-Copy
-npx cypress open
-Run all tests in headless mode:
+- Access to the RESTful API and React app (ensure both are running).
 
-bash
-Copy
-npx cypress run
-View Test Results
+- Running React App localy (Backend & Frontend)
 
-Test results will be displayed in the terminal or Cypress Test Runner.
+- Install Dependencies
 
-Running Tests in GitHub Codespaces
-Open the Repository in Codespaces
+---
 
-Navigate to the repository on GitHub and click the Code button.
+    Next Steps
 
-Select Open with Codespaces and create a new Codespace.
+*Expand Test Coverage*
 
-Install Dependencies
+- Add more test cases for edge cases and error scenarios.
 
-Once the Codespace is ready, run:
+- Include tests for additional frontend components.
 
-bash
-Copy
-npm install
-Run Cypress Tests
+*Integrate with CI/CD*
 
-Open the terminal in Codespaces and run:
+- Set up GitHub Actions to run tests automatically on every push or pull request.
 
-bash
-Copy
-npx cypress run
-View Test Results
+- Generate Test Reports
 
-Test results will be displayed in the terminal.
+- Use Cypress plugins like mochawesome to generate detailed test reports.
 
-Next Steps
-Expand Test Coverage
+*Enhance Test Data Management*
 
-Add more test cases for edge cases and error scenarios.
+- Use fixtures or external data sources for dynamic test data.
 
-Include tests for additional frontend components.
+---
 
-Integrate with CI/CD
+    License
 
-Set up GitHub Actions to run tests automatically on every push or pull request.
-
-Generate Test Reports
-
-Use Cypress plugins like mochawesome to generate detailed test reports.
-
-Enhance Test Data Management
-
-Use fixtures or external data sources for dynamic test data.
-
-Contributing
-If you'd like to contribute to this project, please follow these steps:
-
-Fork the repository.
-
-Create a new branch for your feature or bugfix.
-
-Submit a pull request with a detailed description of your changes.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-This updated README.md now includes the frontend testing implementation, instructions for testing locally and in GitHub Codespaces, and aligns with your project structure and objectives. Let me know if you need further adjustments!
-
+*This project is licensed under demo purposes only*
 
