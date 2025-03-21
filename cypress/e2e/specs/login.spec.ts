@@ -42,7 +42,7 @@ describe('RESTful API Dev Tests', () => {
       expect(response.body.name).to.equal(newObject.name);
       expect(response.body.data).to.deep.equal(newObject.data); // Verify the data matches
 
-      // Store the created object ID for later tests
+      // Store the created object ID
       createdObjectId = response.body.id;
     });
   });
@@ -59,10 +59,10 @@ describe('RESTful API Dev Tests', () => {
 
     apiService.updateObjectById(createdObjectId, updatedObject).then((response) => {
       cy.log('Response:', response); // Log the response
-      expect(response.status).to.equal(200); // Expect a 200 OK response
-      expect(response.body.id).to.equal(createdObjectId); // Verify the object ID matches
-      expect(response.body.name).to.equal(updatedObject.name); // Verify the updated name
-      expect(response.body.data).to.deep.equal(updatedObject.data); // Verify the updated data
+      expect(response.status).to.equal(200);
+      expect(response.body.id).to.equal(createdObjectId);
+      expect(response.body.name).to.equal(updatedObject.name);
+      expect(response.body.data).to.deep.equal(updatedObject.data);
     });
   });
 
@@ -70,7 +70,7 @@ describe('RESTful API Dev Tests', () => {
   it('should delete an object by its ID', () => {
     apiService.deleteObjectById(createdObjectId).then((response) => {
       cy.log('Response:', response); // Log the response
-      expect(response.status).to.equal(200); // Expect a 200 OK response
+      expect(response.status).to.equal(200);
       expect(response.body.message).to.equal(`Object with id = ${createdObjectId} has been deleted.`);
     });
   });
