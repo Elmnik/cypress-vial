@@ -22,7 +22,7 @@ export class RestfulApiDevService {
     return cy.request({
       method: 'GET',
       url: `${this.baseUrl}/objects/${id}`,
-      failOnStatusCode: false, // Allow non-2xx status codes
+      failOnStatusCode: false,
     });
   }
 
@@ -39,7 +39,7 @@ export class RestfulApiDevService {
         'Content-Type': 'application/json',
       },
       body: data,
-      failOnStatusCode: false, // Allow non-2xx status codes
+      failOnStatusCode: false,
     });
   }
 
@@ -57,7 +57,7 @@ export class RestfulApiDevService {
         'Content-Type': 'application/json',
       },
       body: data,
-      failOnStatusCode: false, // Allow non-2xx status codes
+      failOnStatusCode: false,
     });
   }
 
@@ -70,7 +70,7 @@ export class RestfulApiDevService {
     return cy.request({
       method: 'DELETE',
       url: `${this.baseUrl}/objects/${id}`,
-      failOnStatusCode: false, // Allow non-2xx status codes
+      failOnStatusCode: false,
     });
   }
 }
