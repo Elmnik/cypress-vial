@@ -1,28 +1,31 @@
 import { RestfulApiDevService } from '../services/AuthService';
 
 describe('RESTful API Dev Tests', () => {
-  const apiService = new RestfulApiDevService();
+  const apiService = new RestfulApiDevService(); // Used a real api for testing
   let createdObjectId: string; // Store the ID of the created object for later tests
 
-  it('should retrieve all objects from the API', () => {
+  // Test1: Verify that all objects should be retrieved from the API
+  it('should retrieve all objects from the API', () => { 
     apiService.getAllObjects().then((response) => {
       cy.log('Response:', response); // Log the response
-      expect(response.status).to.equal(200); // Expect a 200 OK response
-      expect(response.body).to.be.an('array'); // Verify the response is an array
+      expect(response.status).to.equal(200);
+      expect(response.body).to.be.an('array');
     });
   });
 
+   // Test2: Verify that a specific object should be retrieved by its ID
   it('should retrieve a specific object by its ID', () => {
     const objectId = '1'; // Use a known object ID from the API
     apiService.getObjectById(objectId).then((response) => {
       cy.log('Response:', response); // Log the response
-      expect(response.status).to.equal(200); // Expect a 200 OK response
-      expect(response.body.id).to.equal(objectId); // Verify the object ID matches
-      expect(response.body.name).to.be.a('string'); // Verify the name is a string
-      expect(response.body.data).to.be.an('object'); // Verify the data is an object
+      expect(response.status).to.equal(200);
+      expect(response.body.id).to.equal(objectId);
+      expect(response.body.name).to.be.a('string');
+      expect(response.body.data).to.be.an('object');
     });
   });
 
+   // Test3: Verify that a new object can be created in the API
   it('should create a new object in the API', () => {
     const newObject = {
       name: 'Test Object',
@@ -33,10 +36,10 @@ describe('RESTful API Dev Tests', () => {
     };
 
     apiService.createNewObject(newObject).then((response) => {
-      cy.log('Response:', response); // Log the response
-      expect(response.status).to.equal(200); // Expect a 200 OK response
-      expect(response.body.id).to.be.a('string'); // Verify the new object has an ID
-      expect(response.body.name).to.equal(newObject.name); // Verify the name matches
+      cy.log('Response:', response);
+      expect(response.status).to.equal(200);
+      expect(response.body.id).to.be.a('string');
+      expect(response.body.name).to.equal(newObject.name);
       expect(response.body.data).to.deep.equal(newObject.data); // Verify the data matches
 
       // Store the created object ID for later tests
@@ -44,6 +47,7 @@ describe('RESTful API Dev Tests', () => {
     });
   });
 
+   // Test 4: Verify that an Object can be updated by its ID
   it('should update an existing object by its ID', () => {
     const updatedObject = {
       name: 'Updated Test Object',
@@ -62,6 +66,7 @@ describe('RESTful API Dev Tests', () => {
     });
   });
 
+   //Test 5:Verify that an object can be deleted by its ID
   it('should delete an object by its ID', () => {
     apiService.deleteObjectById(createdObjectId).then((response) => {
       cy.log('Response:', response); // Log the response
