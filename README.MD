@@ -18,19 +18,19 @@ This project automates a React app that manages queries against clinical trial d
 
     Objectives
 
-- Develop a Comprehensive Testing Plan (xlsx.file)
+- Develop a Comprehensive Testing Plan. (xlsx.file)
 
-- Based on the provided PRD and Functional Requirements Specification (FRS) ( Doc file)
+- Based on the provided PRD and Functional Requirements Specification(FRS). ( Doc file)
 
 - Define test scenarios, test cases, and acceptance criteria. (Doc File)
 
-- Execute the FRS Against the App
+- Execute the FRS Against the App. (Doc file)
 
 - Document any issues or discrepancies (Doc file).
 
 - Perform manual and automated testing to validate functionality.
 
-- Implement Automated Tests Using Cypress
+- Implement Automated Tests Using Cypress.
 
 - Automate key features of the application using Cypress and TypeScript.
 
